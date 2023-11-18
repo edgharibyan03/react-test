@@ -1,0 +1,15 @@
+h1, h2, h3, span, p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.homepage{
+  display: flex;
+  height: 100vh;
+  &-navbar{
+    width: 6%;
+  }
+  &-section{
+    flex: 1;
+    width: 80%;
+  }
+}
