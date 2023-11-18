@@ -45,8 +45,7 @@ export default function MovieSectionInfo() {
           <span className="movie-section-info-year">{activeMovie.ReleaseYear}</span>
           <span className="movie-section-info-age">{activeMovie.MpaRating}</span>
           <span className="movie-section-info-duration">
-            {Math.floor(activeMovie.Duration / 3600)}
-            h
+            {Math.floor(activeMovie.Duration / 3600) > 0 && `${Math.floor(activeMovie.Duration / 3600)}h`}
             {' '}
             {CalculateMovieDuration(activeMovie.Duration)}
           </span>
