@@ -16,10 +16,12 @@ export default function MovieSectionTrending() {
   const [moviesList, setMoviesList] = useState(movies)
 
   useEffect(() => {
-    const lastViewedMovie: string = JSON.parse(sessionStorage.getItem('last_viewed_movie') || '')
+    if (sessionStorage.getItem('last_viewed_movie')) {
+      const lastViewedMovie: string = JSON.parse(sessionStorage.getItem('last_viewed_movie') || '')
 
-    if (lastViewedMovie) {
-      setMoviesList(customSort(moviesList.TendingNow, lastViewedMovie))
+      if (lastViewedMovie) {
+        setMoviesList(customSort(moviesList.TendingNow, lastViewedMovie))
+      }
     }
   }, [])
 
